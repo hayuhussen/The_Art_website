@@ -1,0 +1,15 @@
+{%include 'includes/adminhead.html'%}
+{%include 'includes/aside.html'%}
+<body class="g-sidenav-show  bg-gray-100">
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+      {%include 'includes/navadmin.html'%}
+     
+      <div class="row my-4">
+<form method="POST">
+    <h3>are you sure</h3>
+    {% csrf_token %}
+    {{form}}
+    {% comment %} <input type="submit" class="btn btn-primary" id="moreFields" value="Add" /> {% endcomment %}
+    <input class="btn btn-danger" type='submit' value='delete'>
+    <a href="{% url 'who' %}">cancel</a>
+  </form>

@@ -1,0 +1,76 @@
+{%include 'includes/adminhead.html'%}
+{%include 'includes/aside.html'%}
+<body class="g-sidenav-show  bg-gray-100">
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+  {%include 'includes/navadmin.html'%}
+ 
+  <div class="row my-4">
+        
+    <form method="POST" >
+      {% comment %} <input type="submit" class="btn btn-primary" id="moreFields" value="Add" /> {% endcomment %}
+      {% csrf_token %}
+      {{form.as_p}}
+        {% comment %} <span id="writeroot"></span> {% endcomment %}
+      <input type="submit" class="btn btn-primary"  value="save" />
+  
+    </form>
+      
+        <div class="card-body px-0 pb-2">
+          <div class="table-responsive">
+            <table class="table align-items-center mb-0">
+              <thead>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">email</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">phonenumber</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">address</th>
+                </tr>
+              </thead>
+              <tbody>
+                {%for i in items%}
+
+                <tr>
+                  <td>
+                    <div class="d-flex px-2 py-1">
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="mb-0 text-sm">{{i.emailid}}</h6>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="avatar-group mt-2">
+                      
+                        <h6 class="mb-0 text-sm">{{i.phoneno}}</h6>
+                    
+                     
+                    </div>
+                  </td>
+                  <td class="align-middle text-center text-sm">
+                    <span class="text-xs font-weight-bold">{{i.address}}</span>
+                  </td>
+                  <td class="align-middle text-center text-sm">
+                    <a class="btn btn-primary" href="{% url 'contactinfos_update' i.id%}{{i.id}}">edit</a>
+                  </td>
+                  <td class="align-middle text-center text-sm">
+                    <a class="btn btn-danger" href="{% url 'contactinfos_delete' i.id%}{{i.id}}">delete</a>
+                  </td>
+                  {% comment %} <td class="align-middle">
+                    <div class="progress-wrapper w-75 mx-auto">
+                      <div class="progress-info">
+                        <div class="progress-percentage">
+                          <span class="text-xs font-weight-bold">60%</span>
+                        </div>
+                      </div>
+                      <div class="progress">
+                        <div class="progress-bar bg-gradient-info w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                  </td> {% endcomment %}
+                </tr>
+        {%endfor%}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>

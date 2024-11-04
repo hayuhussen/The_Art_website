@@ -1,0 +1,153 @@
+{% load static %}
+<html lang="en" class="no-js">
+
+
+<!-- Mirrored from aminurislam.com/labartisan/anftiz-demo/anftiz/all-authors-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Jul 2024 11:55:42 GMT -->
+{% include "includes/head.html" %}
+
+<body>
+    <!-- preloader start here -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- preloader ending here -->
+
+    <!-- ===============// header section start here \\================= -->
+    {% include "includes/header.html" %}
+    <!-- ===============//header section end here \\================= -->
+
+
+
+    <!-- ==========Page Header Section Start Here========== -->
+    <section class="page-header-section style-1">
+        <div class="container">
+            <div class="page-header-content">
+                <div class="page-header-inner">
+                    <div class="page-title">
+                        <h2> All of our creators</h2>
+                    </div>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">All-Creators</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==========Page Header Section Ends Here========== -->
+
+
+    <!-- ==========explore Section start Here========== -->
+    <section class="explore-section padding-top padding-bottom">
+        <div class="container">
+            <div class="section-header">
+                <div class="nft-filter d-flex flex-wrap justify-content-center gap-15">
+                    <div class="form-floating">
+                        <select class="form-select" id="catSelect" aria-label="Floating label select example">
+                            <option value="1">By views</option>
+                            <option value="3">New creator</option>
+                            <option value="3">Top Seller</option>
+                        </select>
+                        <label for="catSelect">Filter</label>
+                    </div>
+                    {% comment %} <div class="form-floating">
+                        <select class="form-select" id="sortSelect" aria-label="Floating label select example">
+                            <option selected>All Authors</option>
+                            <option value="1">Varified</option>
+                            <option value="2">Unvarified</option>
+                            <option value="3">Recenly joined</option>
+                            <option value="3">Seller</option>
+                            <option value="3">Collector </option>
+                        </select>
+                        <label for="sortSelect">Author Type</label>
+                    </div> {% endcomment %}
+                </div>
+                <div class="nft-search">
+                    <div class="form-floating nft-search-input">
+                        <input type="text" class="form-control" id="nftSearch" placeholder="Search Author">
+                        <label for="nftSearch">Search creator</label>
+                        <button type="button"> <i class="icofont-search-1"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="section-wrapper">
+                <div class="explore-wrapper">
+                    <div class="row justify-content-center g-4">
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <div class="nft-item style-2">
+                                <div class="nft-inner">
+                                    <div class="nft-thumb">
+                                        <img loading="lazy" src="{% static 'assets/images/nft-item/style-2/01.jpg' %}" alt="nft-img">
+                                    </div>
+                                    <div class="nft-content">
+                                        <div class="author-thumb">
+                                            <a href="author.html" class="veryfied"><img loading="lazy"
+                                                    src="{% static 'assets/images/seller/collector-1.png' %}" alt="profile"></a>
+                                        </div>
+                                        <div class="author-details">
+                                            <h5><a href="author.html">Name</a> </h5>
+                                            <p class="nft-price yellow-color">number of work</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <div class="nft-item style-2">
+                                <div class="nft-inner">
+                                    <div class="nft-thumb">
+                                        <img loading="lazy" src="{% static 'assets/images/nft-item/style-2/01.jpg' %}" alt="nft-img">
+                                    </div>
+                                    <div class="nft-content">
+                                        <div class="author-thumb">
+                                            <a href="author.html" class="veryfied"><img loading="lazy"
+                                                    src="{% static 'assets/images/seller/collector-1.png' %}" alt="profile"></a>
+                                        </div>
+                                        <div class="author-details">
+                                            <h5><a href="author.html">Name</a> </h5>
+                                            <p class="nft-price yellow-color">number of work</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="load-btn mt-5">
+                        <a href="all-authors.html" class="default-btn move-bottom">
+                            <span>Load More</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==========explore Section ends Here========== -->
+
+
+
+    <!-- ===============//footer section start here \\================= -->
+    {% include "includes/footer.html" %}
+    <!-- ===============//footer section end here \\================= -->
+
+
+
+    <!-- scrollToTop start here -->
+    <a href="#" class="scrollToTop"><i class="icofont-swoosh-up"></i></a>
+    <!-- scrollToTop ending here -->
+
+
+
+
+    <!-- All Scripts -->
+    {% include "includes/jss.html" %}
+</body>
+
+
+<!-- Mirrored from aminurislam.com/labartisan/anftiz-demo/anftiz/all-authors-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Jul 2024 11:55:43 GMT -->
+</html>

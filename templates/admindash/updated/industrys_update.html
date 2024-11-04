@@ -1,0 +1,14 @@
+{%include 'includes/adminhead.html'%}
+{%include 'includes/aside.html'%}
+<body class="g-sidenav-show  bg-gray-100">
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+      {%include 'includes/navadmin.html'%}
+     
+      <div class="row my-4">
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    {% comment %} <input type="submit" class="btn btn-primary" id="moreFields" value="Add" /> {% endcomment %}
+    <input class="btn btn-info" type='submit' value='update'>
+    <a href="{% url 'homeservice' %}">cancel</a>
+  </form>

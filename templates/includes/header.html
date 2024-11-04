@@ -1,0 +1,157 @@
+{% load static %}
+<header class="header">
+    <div class="container-fluid">
+        <div class="header__content">
+            <div class="header__logo">
+                <a href="{% url "Account:index" %}">
+                    <img src="{% static 'assets/images/logo/home.png' %}" alt="logo" width="70">
+                </a>
+                <a href="{% url "Account:index" %}">BETE KIRS</a>
+            </div>
+
+            <form action="#" class="header__search">
+                
+                <input type="text" placeholder="Search items, collections, and creators" list="colors_data">
+                <datalist id="colors_data">
+                    <option value="All images">
+                      </option>
+                        <option font-family:'Arial', sans-serif; value="Videos">
+                        </option>
+                    <option value="Music"></option>
+                    <option value="Sound effects"></option>
+                    <option value="GIFs"></option>
+                    <option value="Users"></option>
+                    <option value="3D Assets"></option>
+                  </datalist>
+                <button type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018"/>
+                    <path d="M13 6.5a6.47 6.47 0 0 1-1.258 3.844q.06.044.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11"/>
+                  </svg>
+                  
+                  
+                    
+                    </button>
+                <button type="button" class="close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">        
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                  </svg>
+                  
+                  
+                    </button>
+            </form>
+            <div class="header__menu ms-auto">
+                <ul class="header__nav mb-0">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10">Media</a>
+
+                        <ul class="dropdown-menu header__nav-menu">
+                            <li><a class="drop-down-item active" href="{% url "Account:collection" %}">ALL IMAGES</a></li>
+                            <li><a class="drop-down-item" href="index-2.html">PHOTOS</a></li>
+                            <li><a class="drop-down-item" href="index-3.html">ILLUSTRATIONS</a></li>
+                            <li><a class="drop-down-item" href="index-4.html">VECTORS</a></li>
+                            <li><a class="drop-down-item" href="index-4.html">Videos</a></li>
+                            <li><a class="drop-down-item" href="index-5.html">3D Assets</a></li>
+                        </ul>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10">Discover</a>
+
+                        <ul class="dropdown-menu header__nav-menu">
+                            <li><a class="drop-down-item" href="create-variant.html">Popular images</a></li>
+                            <li><a class="drop-down-item" href="create-nft.html">Popular videos</a></li>
+                            <li><a class="drop-down-item" href="item-details.html">popular 3D Assets </a></li>
+                            <li><a class="drop-down-item" href="explore.html">popular searches</a></li>
+       
+
+                        </ul>
+                    </li>
+                  
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10">About</a>
+
+                        <ul class="dropdown-menu header__nav-menu" data-popper-placement="top-start">
+                            <li><a class="drop-down-item" href="{% url "Account:creator" %}">Creators</a></li>
+                            <li><a class="drop-down-item" href="{% url "Account:blog" %}">Blog</a></li>
+                            <li><a class="drop-down-item" href="policy.html">Privacy & Policy</a></li>
+                            <li><a class="drop-down-item" href="terms.html">Terms & Condition</a></li>
+                            <li><a class="drop-down-item" href="404.html">404</a></li>
+                           
+                        </ul>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M12,10a2,2,0,1,0,2,2A2,2,0,0,0,12,10ZM5,10a2,2,0,1,0,2,2A2,2,0,0,0,5,10Zm14,0a2,2,0,1,0,2,2A2,2,0,0,0,19,10Z" />
+                            </svg></a>
+
+                        <ul class="dropdown-menu header__nav-menu">
+                            <li><a class="drop-down-item" href="contact.html">Contact </a></li>
+                            <li><a class="drop-down-item" href="coming-soon.html">Coming soon</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="header__actions">
+                <div class="header__action header__action--search">
+                    <button class="header__action-btn" type="button"><i class="icofont-search-1"></i></button>
+                </div>
+
+                <div class="header__action header__action--profile">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" data-bs-offset="-100,10" >
+                           Join <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-signpost-split" viewBox="0 0 16 16">
+                            <path d="M7 7V1.414a1 1 0 0 1 2 0V2h5a1 1 0 0 1 .8.4l.975 1.3a.5.5 0 0 1 0 .6L14.8 5.6a1 1 0 0 1-.8.4H9v10H7v-5H2a1 1 0 0 1-.8-.4L.225 9.3a.5.5 0 0 1 0-.6L1.2 7.4A1 1 0 0 1 2 7zm1 3V8H2l-.75 1L2 10zm0-5h6l.75-1L14 3H8z"/>
+                          </svg>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="author.html"><span class="me-1"><i
+                                            class="icofont-options"></i></span>
+                                    Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="activity.html"><span class="me-1"><i
+                                            class="icofont-lightning-ray"></i></span>
+                                    Activity</a></li>
+                            <li><a class="dropdown-item" href="signup.html"><span class="me-1"><i
+                                            class="icofont-space-shuttle"></i></span>
+                                    Sign
+                                    Up</a></li>
+                            <li><a class="dropdown-item" href=" {% url 'Account:login' %} "><span class="me-1"><i
+                                            class="icofont-login"></i></span> Sign
+                                    In</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                           {% comment %} after login {% endcomment %}
+                            {% comment %} <li><a class="dropdown-item" href="#"> Sign
+                                    Out <span class="ms-1"><i class="icofont-logout"></i></span></a></li> {% endcomment %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="wallet-btn">
+                   
+                </div>
+                <div class="wallet-btn">
+                    <a href="wallet.html"> <span
+                            class="d-none d-md-inline"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="16" fill="currentColor" class="bi bi-display-fill" viewBox="0 0 16 16">
+                                <path d="M6 12q0 1-.25 1.5H5a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-.75Q10 13 10 12h4c2 0 2-2 2-2V4c0-2-2-2-2-2H2C0 2 0 4 0 4v6c0 2 2 2 2 2z"/>
+                              </svg>Updates</span> </a>
+                </div>
+            </div>
+
+            <button class="menu-trigger header__btn" id="menu05">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
