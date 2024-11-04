@@ -49,11 +49,11 @@
 
                         <ul class="dropdown-menu header__nav-menu">
                             <li><a class="drop-down-item active" href="{% url "Account:collection" %}">ALL IMAGES</a></li>
-                            <li><a class="drop-down-item" href="index-2.html">PHOTOS</a></li>
-                            <li><a class="drop-down-item" href="index-3.html">ILLUSTRATIONS</a></li>
-                            <li><a class="drop-down-item" href="index-4.html">VECTORS</a></li>
-                            <li><a class="drop-down-item" href="index-4.html">Videos</a></li>
-                            <li><a class="drop-down-item" href="index-5.html">3D Assets</a></li>
+                            <li><a class="drop-down-item" href="{% url 'Account:index2'%}">PHOTOS</a></li>
+                            <li><a class="drop-down-item" href="{% url 'Account:index3'%}">ILLUSTRATIONS</a></li>
+                            <li><a class="drop-down-item" href="{% url 'Account:index4'%}">VECTORS</a></li>
+                            <li><a class="drop-down-item" href="{% url 'Account:index5'%}">Videos</a></li>
+                            
                         </ul>
                     </li>
                     <li class="header__nav-item">

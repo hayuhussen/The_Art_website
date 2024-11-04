@@ -5,284 +5,897 @@
 <!-- Mirrored from aminurislam.com/labartisan/anftiz-demo/anftiz/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Jul 2024 11:53:26 GMT -->
 {% include "includes/head.html" %}
 
-<body class="home-1">
-   
-    <!-- ===============//header section end here \\================= -->
-    {% include "includes/header.html" %}
-
-    <!-- ===============//banner section start here \\================= -->
-    <section class="banner-section style-1">
-        <div class="container">
-            <div class="banner-wrapper">
-                {% for banner in banners %}
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-lg-12" style="background-image: url('{{ banner.background_image.url }}'); height: 800px; width: 600%;">
-                        <div class="banner-content text-center">
-                            <h2>{{ banner.title }}</h2>
-                            <p>{{ banner.description }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+<body>
+    <!-- preloader start here -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
             </div>
-        </div>
-    </section>
-    
-    
-    <section class="explore-section  padding-top padding-bottom">
-        <div class="container">
-            <div class="section-wrapper">
-                <div class="row gy-5 flex-row-reverse">
-                    <div class="col-lg-3">
-                        <aside class="nft-filter">
-                            <div class="accordion" id="accordionExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseOne" aria-expanded="true"
-                                            aria-controls="collapseOne">
-                                            <i class="icofont-atom"></i> Recently Added
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show"
-                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="ethereum">
-                                                <label class="form-check-label" for="ethereum">
-                                                    images
-                                                </label>
-                                            </div>
-                                        
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                            aria-expanded="false" aria-controls="collapseTwo">
-                                            <i class="icofont-ui-browser"></i> Status
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse"
-                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="status1">
-                                                <label class="form-check-label" for="status1">
-                                                    free
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="status2">
-                                                <label class="form-check-label" for="status2">
-                                                   paid
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="status3">
-                                                <label class="form-check-label" for="status3">
-                                                    Trending
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                            aria-expanded="false" aria-controls="collapseThree">
-                                            <i class="icofont-library"></i> Collections
-                                        </button>
-                                    </h2>
-                                    <div id="collapseThree" class="accordion-collapse collapse"
-                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="collect1">
-                                                <label class="form-check-label" for="collect1">
-                                                    3D arts
-                                                </label>
-                                            </div>
-                                          
-                                        </div>
-                                    </div>
-                                </div>
-                               
-                            </div>
-                        </aside>
-                    </div>
-                    <div class="col-lg-9">
-                        <div class="explore-wrapper explore-load">
-                        <div class="row g-4">
-                            
-                            <div class="row g-4">
-                                {% for item in nft_items %}
-                                <div class="col-xl-4 col-md-6"> 
-                                    <div class="nft-item">
-                                        <div class="nft-inner">
-                                            <!-- nft top part -->
-                                            <div class="nft-item-top d-flex justify-content-between align-items-center">
-                                                <div class="author-part">
-                                                    <ul class="author-list d-flex">
-                                                        <li class="single-author d-flex align-items-center">
-                                                            <a href="author.html" class="veryfied">
-                                                                <img src="{{ item.author_image.url }}" alt="author-img">
-                                                            </a>
-                                                            <h6><a href="author.html">{{ item.author_name }}</a></h6>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="more-part">
-                                                    <div class="dropstart">
-                                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                                           aria-expanded="false" data-bs-offset="25,0">
-                                                            <i class="icofont-flikr"></i>
-                                                        </a>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a class="dropdown-item" href="#"><span>
-                                                                        <i class="icofont-warning"></i>
-                                                                    </span> Report </a>
-                                                            </li>
-                                                            <li><a class="dropdown-item" href="#"><span><i class="icofont-reply"></i></span>
-                                                                    Share</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- nft-bottom part -->
-                                            <div class="nft-item-bottom">
-                                                <div class="nft-thumb">
-                                                    <img src="{{ item.image.url }}" alt="nft-img">
-                                                    <span class="badge rounded-pill position-absolute"><i class="icofont-heart"></i>
-                                                        1.3k</span>
-                                                </div>
-                                                <div class="nft-content">
-                                                    <div class="content-title">
-                                                        <h5><a href="item-details.html">{{ item.title }}</a></h5>
-                                                    </div>
-                                                    <div class="nft-status d-flex flex-wrap justify-content-between align-items-center">
-                                                        <span class="nft-view"><a href="activity.html"><i class="icofont-eye-alt"></i>
-                                                                View History</a> </span>
-                                                    </div>
-                                                    <div class="price-like d-flex justify-content-between align-items-center">
-                                                        <div class="nft-price d-flex align-items-center">
-                                                            <span class="currency-img">
-                                                                <img src="{% static 'assets/images/currency/currency-4.png' %}" alt="currency img">
-                                                            </span>
-                                                            <p>${{ item.price }}</p>
-                                                        </div>
-                                                        <a href="item-details.html" class="nft-bid">view</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {% endfor %}
-                            </div>
-                            
-                        
-                        
-                        </div>
-                        </div>
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ===============>> banner section end here <<================= -->
-    <!-- ===============>>Catergory section start here <<================= -->
-   <!-- index.html -->
-<section class="category-section padding-top padding-bottom"> 
-    <div class="container">
-        <div class="section-header">
-            <h3 class="header-title">Browse By Category</h3>
-            <div class="header-content">
-                <a href="explore-2.html" class="default-btn style-2 small-btn move-right">
-                    <span>View All Categories</span>
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            {% for category in categories %}
-            <div class="col-lg-4 col-md-6">
-                <div class="category-item">
-                    <!-- <div class="icon">
-                        {{ category.icon|safe }} 
-                    </div> -->
-                    <div class="name">{{ category.name }}</div>
-                    <div class="image">
-                        <!-- Display the image with the image URL -->
-                        <img src="{{ category.image.url }}" alt="{{ category.name }}">
-                    </div>
-                    
-                    
-                </div>
-            </div>
-            {% endfor %}
         </div>
     </div>
-</section>
-
-    <!-- ===============>> Artwork section start here <<================= -->
- 
-    <!-- ===============>> Artwork section end here <<================= -->
+    <!-- preloader ending here -->
 
 
+
+    <!-- ===============// header section start here \\================= -->
+    {% include "includes/header.html" %}
+    <!-- ===============//header section end here \\================= -->
+
+
+    <!-- ===============//banner section start here \\================= -->
+    <section class="banner-section" style="background-image: url(assets/images/banner/bg-1.jpg);">
+        <div class="container">
+            <div class="banner-wrapper">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <div class="banner-content">
+                            <h1 class="mb-3"><span class="gradient-text-orange">Discover</span> , Collect, And Sell
+                                <span class="gradient-text-orange">
+                                    NFTs</span>
+                            </h1>
+                            <p class="mb-5">Digital Marketplace For Crypto Collectibles And Non-Fungible Tokens.
+                                Buy, Sell, And Discover Exclusive Digital Assets.</p>
+                            <div class="banner-btns d-flex flex-wrap">
+                                <a href="explore.html" class="default-btn move-top"><span>Explore</span> </a>
+                                <a href="signin.html" class="default-btn move-right"><span>Create</span> </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="banner-image">
+                            <img src="{% static 'assets/images/banner/banner-img.png' %}" alt="NFT Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===============//banner section end here \\================= -->
 
 
     <!-- ===============//collection section start here \\================= -->
- 
+    <section class="collection-section padding-top padding-bottom">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="header-title">Popular Collection</h3>
+                <div class="header-content"><a href="collections.html"
+                        class="default-btn style-2 small-btn move-right"><span>View All
+                            <i class="icofont-circled-right"></i></span></a> </div>
+            </div>
+            <div class="section-wrapper">
+                <div class="collection-wrapper">
+                    <div class="row justify-content-center g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="nft-item collection-item">
+                                <div class="nft-inner">
+                                    <div class="coll-thumb-wrapper">
+                                        <div class="nft-coll-thumb ">
+                                            <div class="thumb-list swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="single-thumb"><img
+                                                            src="{% static  'assets/images/nft-item/category/01.gif' %}"
+                                                            alt="cat-image">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="single-thumb"><img
+                                                            src="{% static 'assets/images/nft-item/category/02.gif' %}"
+                                                            alt="cat-image">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="single-thumb"><img
+                                                            src="{% static 'assets/images/nft-item/category/03.gif' %}"
+                                                            alt="cat-image">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="nft-content">
+                                        <div class="collection-title">
+                                            <h5><a href="collection-single.html">Radium Animated Monster</a> </h5>
+                                            <p>Collection has 13 items</p>
+                                        </div>
+
+                                        <div
+                                            class="author-details d-flex flex-wrap justify-content-between align-items-center">
+                                            <div class="single-author d-flex align-items-center">
+                                                <a href="author.html" class="veryfied"><img
+                                                        src="{% static 'assets/images/seller/collector-4.gif' %}" alt="author-img"></a>
+                                                <h6><a href="author.html">rasselmrh </a></h6>
+                                            </div>
+                                            <span class="badge rounded-pill"><i class="icofont-heart"></i>
+                                                11.3k</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="nft-item collection-item">
+                                <div class="nft-inner">
+                                    <div class="coll-thumb-wrapper">
+                                        <div class="nft-coll-thumb ">
+                                            <div class="thumb-list swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="single-thumb"><img
+                                                            src="{% static ' assets/images/nft-item/category/1.jpg' %}" alt="cat-image">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="single-thumb"><img
+                                                            src="{% static ' assets/images/nft-item/category/2.jpg' %}" alt="cat-image">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="single-thumb"><img
+                                                            src="{% static ' assets/images/nft-item/category/3.jpg' %}" alt="cat-image">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="nft-content">
+                                        <div class="collection-title">
+                                            <h5><a href="collection-single.html">Digital CryptoArt</a> </h5>
+                                            <p>Collection has 11 items</p>
+                                        </div>
+
+                                        <div
+                                            class="author-details d-flex flex-wrap justify-content-between align-items-center">
+                                            <div class="single-author d-flex align-items-center">
+                                                <a href="author.html" class="veryfied"><img
+                                                        src="{% static 'assets/images/seller/collector-3.gif' %}" alt="author-img"></a>
+                                                <h6><a href="author.html">Mimi_Chao </a></h6>
+                                            </div>
+                                            <span class="badge rounded-pill"><i class="icofont-heart"></i>
+                                                1.3k</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="nft-item collection-item">
+                                <div class="nft-inner">
+                                    <div class="coll-thumb-wrapper">
+                                        <div class="nft-coll-thumb ">
+                                            <div class="thumb-list swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="single-thumb"><img
+                                                            src="{% static 'assets/images/nft-item/category/04.gif' %}"
+                                                            alt="cat-image">
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="nft-content">
+                                        <div class="collection-title">
+                                            <h5><a href="collection-single.html">ZombieLand is alive</a> </h5>
+                                            <p>Collection has 14+ items</p>
+                                        </div>
+
+                                        <div
+                                            class="author-details d-flex flex-wrap justify-content-between align-items-center">
+                                            <div class="single-author d-flex align-items-center">
+                                                <a href="author.html" class="veryfied"><img
+                                                        src="{% static 'assets/images/seller/collector-2.png' %}" alt="author-img"></a>
+                                                <h6><a href="author.html">@xar_spacer </a></h6>
+                                            </div>
+                                            <span class="badge rounded-pill"><i class="icofont-heart"></i>
+                                                4.3k</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- ===============//Collection section end here \\================= -->
 
 
 
-    <!-- ===============//nft-sell section start here \\================= -->
-    <section class="process-section padding-bottom">
+    <!-- ===============//auction section start here \\================= -->
+    <section class="auction-section padding-bottom">
         <div class="container">
-            <div class="section-header justify-content-center">
-                <div class="header-title">
-                    <h2>About</h2>
+            <div class="section-header">
+                <h3 class="header-title">Live Auctions</h3>
+                <div class="header-content">
+                    <ul class="arrows d-flex flex-wrap align-items-center">
+                        <li class="li arrow-left auction-prev"> <i class="icofont-rounded-left"></i> </li>
+                        <li class="li arrow-right auction-next"> <i class="icofont-rounded-right"></i></li>
+                    </ul>
                 </div>
             </div>
             <div class="section-wrapper">
-                <div class="nft-sell-wrapper">
-                    <div class="row justify-content-center g-4">
-                        {% for item in items %}
-                        <div class="col-md-6">
-                            <div class="nft-item style-3">
-                                <div class="nft-inner text-center">
-                                    <div class="nft-thumb">
-                                        <img src="{{ item.image.url }}" alt="nft-img">
+                <div class="auction-holder">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="nft-item">
+                                <div class="nft-inner">
+                                    <!-- nft top part -->
+                                    <div class="nft-item-top d-flex justify-content-between align-items-center">
+                                        <div class="author-part">
+                                            <ul class="author-list d-flex">
+                                                <li class="single-author">
+                                                    <a href="author.html"><img
+                                                            src="{% static 'assets/images/seller/collector-1.png' %}"
+                                                            alt="author-img"></a>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                        <div class="more-part">
+                                            <div class=" dropstart">
+                                                <a class=" dropdown-toggle" href="#" role="button"
+                                                    data-bs-toggle="dropdown" aria-expanded="false"
+                                                    data-bs-offset="25,0">
+                                                    <i class="icofont-flikr"></i>
+                                                </a>
+
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#"><span>
+                                                                <i class="icofont-warning"></i>
+                                                            </span> Report </a>
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="#"><span><i
+                                                                    class="icofont-reply"></i></span> Share</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="nft-content">
-                                        <div class="author-details">
-                                            <div>{{ item.title }}</div>
-                                            
-                                            <p>{{ item.description }}</p>
+                                    <!-- nft-bottom part -->
+                                    <div class="nft-item-bottom">
+                                        <div class="nft-thumb">
+                                            <img src="{% static 'assets/images/nft-item/01.jpg' %}" alt="nft-img">
+
+                                            <!-- nft countdwon -->
+                                            <ul class="nft-countdown count-down" data-date="May 05, 2025 21:14:01">
+                                                <li>
+                                                    <span class="days">34</span>
+                                                </li>
+                                                <li>
+                                                    <span class="hours">09</span>
+                                                </li>
+                                                <li>
+                                                    <span class="minutes">32</span>
+                                                </li>
+                                                <li>
+                                                    <span class="seconds">32</span>
+                                                </li>
+                                            </ul>
+                                            <span class="badge rounded-pill position-absolute"><i
+                                                    class="icofont-heart"></i>
+                                                1.3k</span>
+                                        </div>
+                                        <div class="nft-content">
+                                            <div class="content-title">
+                                                <h5><a href="item-details.html">Walking On
+                                                        Air</a> </h5>
+                                            </div>
+
+                                            <div
+                                                class="nft-status d-flex flex-wrap justify-content-between align-items-center ">
+                                                <span class="nft-view"><a href="activity.html"><i
+                                                            class="icofont-eye-alt"></i> View
+                                                        History</a> </span>
+                                                <div class="nft-stock"> 12 in Stock</div>
+                                            </div>
+                                            <div class="price-like d-flex justify-content-between align-items-center">
+                                                <div class="nft-price d-flex align-items-center">
+                                                    <span class="currency-img">
+                                                        <img src="{% static 'assets/images/currency/currency-1.png' %}"
+                                                            alt="currency img">
+                                                    </span>
+                                                    <p>0.34 ETH
+                                                    </p>
+                                                </div>
+
+                                                <a href="item-details.html" class="nft-bid">Place Bid</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        {% endfor %}
+                        <div class="swiper-slide">
+                            <div class="nft-item">
+                                <div class="nft-inner">
+                                    <!-- nft top part -->
+                                    <div class="nft-item-top d-flex justify-content-between align-items-center">
+                                        <div class="author-part">
+                                            <ul class="author-list d-flex">
+                                                <li class="single-author">
+                                                    <a href="author.html"><img
+                                                            src="{% static 'assets/images/seller/collector-5.png' %}"
+                                                            alt="author-img"></a>
+                                                </li>
+                                              
+                                            </ul>
+                                        </div>
+                                        <div class="more-part">
+                                            <div class=" dropstart">
+                                                <a class=" dropdown-toggle" href="#" role="button"
+                                                    data-bs-toggle="dropdown" aria-expanded="false"
+                                                    data-bs-offset="25,0">
+                                                    <i class="icofont-flikr"></i>
+                                                </a>
+
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#"><span>
+                                                                <i class="icofont-warning"></i>
+                                                            </span> Report </a>
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="#"><span><i
+                                                                    class="icofont-reply"></i></span> Share</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- nft-bottom part -->
+                                    <div class="nft-item-bottom">
+                                        <div class="nft-thumb">
+                                            <img src="{% static 'assets/images/nft-item/02.jpg' %}" alt="nft-img">
+
+                                            <!-- nft countdwon -->
+                                            <ul class="nft-countdown count-down" data-date="May 05, 2025 21:14:01">
+                                                <li>
+                                                    <span class="days">34</span>
+                                                </li>
+                                                <li>
+                                                    <span class="hours">09</span>
+                                                </li>
+                                                <li>
+                                                    <span class="minutes">32</span>
+                                                </li>
+                                                <li>
+                                                    <span class="seconds">32</span>
+                                                </li>
+                                            </ul>
+                                            <span class="badge rounded-pill position-absolute"><i
+                                                    class="icofont-heart"></i>
+                                                1.3k</span>
+                                        </div>
+                                        <div class="nft-content">
+                                            <div class="content-title">
+                                                <h5><a href="item-details.html">Fly'n Higher space </a> </h5>
+                                            </div>
+
+                                            <div
+                                                class="nft-status d-flex flex-wrap justify-content-between align-items-center ">
+                                                <span class="nft-view"><a href="activity.html"><i
+                                                            class="icofont-eye-alt"></i> View
+                                                        History</a> </span>
+                                                <div class="nft-stock"> 12 in Stock</div>
+                                            </div>
+                                            <div class="price-like d-flex justify-content-between align-items-center">
+                                                <div class="nft-price d-flex align-items-center">
+                                                    <span class="currency-img">
+                                                        <img src="{% static 'assets/images/currency/currency-2.png' %}"
+                                                            alt="currency img">
+                                                    </span>
+                                                    <p>0.34 ETH
+                                                    </p>
+                                                </div>
+
+                                                <a href="item-details.html" class="nft-bid">Place Bid</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="nft-item">
+                                <div class="nft-inner">
+                                    <!-- nft top part -->
+                                    <div class="nft-item-top d-flex justify-content-between align-items-center">
+                                        <div class="author-part">
+                                            <ul class="author-list d-flex">
+                                                <li class="single-author">
+                                                    <a href="author.html"><img
+                                                            src="{% static 'assets/images/seller/collector-3.png' %}"
+                                                            alt="author-img"></a>
+                                                </li>
+                                              
+                                            </ul>
+                                        </div>
+                                        <div class="more-part">
+                                            <div class=" dropstart">
+                                                <a class=" dropdown-toggle" href="#" role="button"
+                                                    data-bs-toggle="dropdown" aria-expanded="false"
+                                                    data-bs-offset="25,0">
+                                                    <i class="icofont-flikr"></i>
+                                                </a>
+
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#"><span>
+                                                                <i class="icofont-warning"></i>
+                                                            </span> Report </a>
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="#"><span><i
+                                                                    class="icofont-reply"></i></span> Share</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- nft-bottom part -->
+                                    <div class="nft-item-bottom">
+                                        <div class="nft-thumb">
+                                            <img src="{% static 'assets/images/nft-item/03.jpg' %} " alt="nft-img">
+
+                                            <!-- nft countdwon -->
+                                            <ul class="nft-countdown count-down" data-date="May 05, 2025 21:14:01">
+                                                <li>
+                                                    <span class="days">34</span>
+                                                </li>
+                                                <li>
+                                                    <span class="hours">09</span>
+                                                </li>
+                                                <li>
+                                                    <span class="minutes">32</span>
+                                                </li>
+                                                <li>
+                                                    <span class="seconds">32</span>
+                                                </li>
+                                            </ul>
+                                            <span class="badge rounded-pill position-absolute"><i
+                                                    class="icofont-heart"></i>
+                                                4.3k</span>
+                                        </div>
+                                        <div class="nft-content">
+                                            <div class="content-title">
+                                                <h5><a href="item-details.html">Dodo je Aliener Walk</a> </h5>
+                                            </div>
+
+                                            <div
+                                                class="nft-status d-flex flex-wrap justify-content-between align-items-center ">
+                                                <span class="nft-view"><a href="activity.html"><i
+                                                            class="icofont-eye-alt"></i> View
+                                                        History</a> </span>
+                                                <div class="nft-stock"> 5 in Stock</div>
+                                            </div>
+                                            <div class="price-like d-flex justify-content-between align-items-center">
+                                                <div class="nft-price d-flex align-items-center">
+                                                    <span class="currency-img">
+                                                        <img src="{% static 'assets/images/currency/currency-3.png' %}"
+                                                            alt="currency img">
+                                                    </span>
+                                                    <p>0.64 ETH
+                                                    </p>
+                                                </div>
+
+                                                <a href="item-details.html" class="nft-bid">Place Bid</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="nft-item">
+                                <div class="nft-inner">
+                                    <!-- nft top part -->
+                                    <div class="nft-item-top d-flex justify-content-between align-items-center">
+                                        <div class="author-part">
+                                            <ul class="author-list d-flex">
+                                                <li class="single-author d-flex align-items-center">
+                                                    <a href="author.html" class="veryfied"><img
+                                                            src="{% static 'assets/images/seller/collector-7.png' %}"
+                                                            alt="author-img"></a>
+                                                    <h6><a href="author.html">Mimi_Chao </a></h6>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="more-part">
+                                            <div class=" dropstart">
+                                                <a class=" dropdown-toggle" href="#" role="button"
+                                                    data-bs-toggle="dropdown" aria-expanded="false"
+                                                    data-bs-offset="25,0">
+                                                    <i class="icofont-flikr"></i>
+                                                </a>
+
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#"><span>
+                                                                <i class="icofont-warning"></i>
+                                                            </span> Report </a>
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="#"><span><i
+                                                                    class="icofont-reply"></i></span> Share</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- nft-bottom part -->
+                                    <div class="nft-item-bottom">
+                                        <div class="nft-thumb">
+                                            <img src="{% static 'assets/images/nft-item/04.jpg' %}" alt="nft-img">
+
+                                            <!-- nft countdwon -->
+                                            <ul class="nft-countdown count-down" data-date="May 05, 2025 21:14:01">
+                                                <li>
+                                                    <span class="days">34</span>
+                                                </li>
+                                                <li>
+                                                    <span class="hours">09</span>
+                                                </li>
+                                                <li>
+                                                    <span class="minutes">32</span>
+                                                </li>
+                                                <li>
+                                                    <span class="seconds">32</span>
+                                                </li>
+                                            </ul>
+                                            <span class="badge rounded-pill position-absolute"><i
+                                                    class="icofont-heart"></i>
+                                                1.3k</span>
+                                        </div>
+                                        <div class="nft-content">
+                                            <div class="content-title">
+                                                <h5><a href="item-details.html">MimiChika Cartos</a> </h5>
+                                            </div>
+
+                                            <div
+                                                class="nft-status d-flex flex-wrap justify-content-between align-items-center ">
+                                                <span class="nft-view"><a href="activity.html"><i
+                                                            class="icofont-eye-alt"></i> View
+                                                        History</a> </span>
+                                                <div class="nft-stock"> 17 in Stock</div>
+                                            </div>
+                                            <div class="price-like d-flex justify-content-between align-items-center">
+                                                <div class="nft-price d-flex align-items-center">
+                                                    <span class="currency-img">
+                                                        <img src="{% static 'assets/images/currency/currency-4.png' %}"
+                                                            alt="currency img">
+                                                    </span>
+                                                    <p>0.94 ETH
+                                                    </p>
+                                                </div>
+
+                                                <a href="item-details.html" class="nft-bid">Place Bid</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- ===============//nft-sell section end here \\================= -->
+    <!-- ===============//auction section end here \\================= -->
+
+
+
+    <!-- ===============//seller section start here \\================= -->
+    <section class="seller-section pb-100">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="header-title">Top Collectors</h3>
+                <div class="header-content">
+                    <ul class="filter-group d-flex flex-wrap align-items-center">
+                        <li class="li collection-filter">
+                            <div class="select-wrapper arrow-blue" data-icon="&#xea99;">
+                                <select class="form-select " aria-label="Collection select">
+                                    <option selected>Collections</option>
+                                    <option value="1">Newest</option>
+                                    <option value="2">Trending</option>
+                                    <option value="3">Most Popular</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="li day-filter">
+                            <div class="select-wrapper arrow-orange" data-icon="&#xea99;">
+                                <select class="form-select" aria-label="Day select">
+                                    <option selected>Last 7 Days</option>
+                                    <option value="1">Last 15 Day</option>
+                                    <option value="2">Last Month</option>
+                                    <option value="3">All Time</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section-wrapper">
+                <div class="seller-wrapper">
+                    <div class="row g-3">
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="seller-item">
+                                <div class="seller-inner">
+                                    <div class="seller-part">
+                                        <p class="assets-number">01</p>
+                                        <div class="assets-owner">
+                                            <div class="owner-thumb veryfied">
+                                                <a href="author.html" class=""><img
+                                                        src="{% static 'assets/images/seller/collector-2.gif' %}" alt="seller-img"></a>
+                                            </div>
+                                            <div class="owner-content">
+                                                <h6><a href="author.html">@Ndrea _uido</a> </h6>
+                                                <p>3,002.98 ETH</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="badge rounded-pill bg-blue">+38.78%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="seller-item">
+                                <div class="seller-inner">
+                                    <div class="seller-part">
+                                        <p class="assets-number">02</p>
+                                        <div class="assets-owner">
+                                            <div class="owner-thumb veryfied">
+                                                <a href="author.html"><img src="{% static 'assets/images/seller/collector-1.png' %}"
+                                                        alt="seller-img"></a>
+                                            </div>
+                                            <div class="owner-content">
+                                                <h6><a href="author.html">goxio dom</a> </h6>
+                                                <p>$12,002.48</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="badge rounded-pill bg-orange">-2.78%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="seller-item">
+                                <div class="seller-inner">
+                                    <div class="seller-part">
+                                        <p class="assets-number">03</p>
+                                        <div class="assets-owner">
+                                            <div class="owner-thumb veryfied">
+                                                <a href="author.html"><img src="{% static 'assets/images/seller/collector-2.png' %}"
+                                                        alt="seller-img"></a>
+                                            </div>
+                                            <div class="owner-content">
+                                                <h6><a href="author.html">pter qido</a> </h6>
+                                                <p>$3,002.98</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="badge rounded-pill bg-blue">+18.8%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="seller-item">
+                                <div class="seller-inner">
+                                    <div class="seller-part">
+                                        <p class="assets-number">04</p>
+                                        <div class="assets-owner">
+                                            <div class="owner-thumb veryfied">
+                                                <a href="author.html"><img src="{% static 'assets/images/seller/collector-8.png' %}"
+                                                        alt="seller-img"></a>
+                                            </div>
+                                            <div class="owner-content">
+                                                <h6><a href="author.html">drexa_3xo</a> </h6>
+                                                <p>$23,002.98</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="badge rounded-pill bg-orange"> -23.81%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="seller-item">
+                                <div class="seller-inner">
+                                    <div class="seller-part">
+                                        <p class="assets-number">05</p>
+                                        <div class="assets-owner">
+                                            <div class="owner-thumb veryfied">
+                                                <a href="author.html"><img src="{% static 'assets/images/seller/collector-6.png' %}"
+                                                        alt="seller-img"></a>
+                                            </div>
+                                            <div class="owner-content">
+                                                <h6><a href="author.html">rox zipper</a> </h6>
+                                                <p>20,02.98 ETH</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="badge rounded-pill bg-blue">+48.38%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="seller-item">
+                                <div class="seller-inner">
+                                    <div class="seller-part">
+                                        <p class="assets-number">06</p>
+                                        <div class="assets-owner">
+                                            <div class="owner-thumb veryfied">
+                                                <a href="author.html"><img src="{% static 'assets/images/seller/collector-3.gif' %}"
+                                                        alt="seller-img"></a>
+                                            </div>
+                                            <div class="owner-content">
+                                                <h6><a href="#">@Anra-_uido</a> </h6>
+                                                <p>$23,002.98</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="badge rounded-pill bg-orange">-8.78%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="seller-item">
+                                <div class="seller-inner">
+                                    <div class="seller-part">
+                                        <p class="assets-number">07</p>
+                                        <div class="assets-owner">
+                                            <div class="owner-thumb veryfied">
+                                                <a href="author.html"><img src="{% static 'assets/images/seller/collector-4.gif' %}"
+                                                        alt="seller-img"></a>
+                                            </div>
+                                            <div class="owner-content">
+                                                <h6><a href="author.html">rassel_mrh </a> </h6>
+                                                <p>93,002.98 ETH</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="badge rounded-pill bg-blue">+88.78%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="seller-item">
+                                <div class="seller-inner">
+                                    <div class="seller-part">
+                                        <p class="assets-number">08</p>
+                                        <div class="assets-owner">
+                                            <div class="owner-thumb veryfied">
+                                                <a href="author.html"><img src="{% static 'assets/images/seller/collector-7.png' %}"
+                                                        alt="seller-img"></a>
+                                            </div>
+                                            <div class="owner-content">
+                                                <h6><a href="author.html">holder don</a> </h6>
+                                                <p>$23,002.98</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="badge rounded-pill bg-blue">+3.7%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="seller-item">
+                                <div class="seller-inner">
+                                    <div class="seller-part">
+                                        <p class="assets-number">09</p>
+                                        <div class="assets-owner">
+                                            <div class="owner-thumb veryfied">
+                                                <a href="author.html"><img src="{% static 'assets/images/seller/collector-1.gif' %}"
+                                                        alt="seller-img"></a>
+                                            </div>
+                                            <div class="owner-content">
+                                                <h6><a href="#">rub_3l</a> </h6>
+                                                <p>$3,002.98</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="badge rounded-pill bg-blue">+31.78%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5">
+                        <a href="rank.html" class="default-btn move-right"><span>Go To Rank</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===============//seller section end here \\================= -->
 
 
 
     <!-- ===============//blog section start here \\================= -->
+    <section class="blog-section pb-120">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="header-title"> Our Latest News</h3>
+                <div class="header-content"><a href="blog.html"
+                        class="default-btn style-2 small-btn move-right"><span>View All
+                            <i class="icofont-circled-right"></i></span></a> </div>
+            </div>
 
+            <div class="section-wrapper">
+                <div class="blog-wrapper">
+                    <div class="row justify-content-center g-4">
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="nft-item blog-item">
+                                <div class="nft-inner">
+                                    <div class="nft-thumb">
+                                        <img src="{% static 'assets/images/nft-item/blog/01.jpg' %}" alt="blog-img">
+                                    </div>
+                                    <div class="nft-content">
+                                        <div class="author-details">
+                                            <h4><a href="blog-single.html">Learn More about NFT</a> </h4>
+                                            <div class="meta-info">
+                                                <p><span><i class="icofont-ui-calendar"></i></span>Jan 20
+                                                    2022
+                                                </p>
+                                                <p><span><i class="icofont-user"></i></span>Jhon doe
+                                                </p>
+                                            </div>
+                                            <a href="blog-single.html"
+                                                class="default-btn move-right small-btn"><span>Read
+                                                    More</span> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="nft-item blog-item">
+                                <div class="nft-inner">
+                                    <div class="nft-thumb">
+                                        <img src="{% static 'assets/images/nft-item/blog/02.jpg' %}" alt="blog-img">
+                                    </div>
+                                    <div class="nft-content">
+                                        <div class="author-details">
+                                            <h4><a href="blog-single.html">Trending NFT 2022</a> </h4>
+                                            <div class="meta-info">
+                                                <p><span><i class="icofont-ui-calendar"></i></span>July
+                                                    20 2022
+                                                </p>
+                                                <p><span><i class="icofont-user"></i></span>Jhon doe
+                                                </p>
+                                            </div>
+                                            <a href="blog-single.html"
+                                                class="default-btn move-right small-btn"><span>Read
+                                                    More</span> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="nft-item blog-item">
+                                <div class="nft-inner">
+                                    <div class="nft-thumb">
+                                        <img src="{% static 'assets/images/nft-item/blog/03.jpg' %}" alt="blog-img">
+                                    </div>
+                                    <div class="nft-content">
+                                        <div class="author-details">
+                                            <h4><a href="blog-single.html">Decentrelize Crypto ... </a> </h4>
+                                            <div class="meta-info">
+                                                <p><span><i class="icofont-ui-calendar"></i></span>Dec 20
+                                                    2022
+                                                </p>
+                                                <p><span><i class="icofont-user"></i></span>rasselmrh
+                                                </p>
+                                            </div>
+                                            <a href="blog-single.html"
+                                                class="default-btn move-right small-btn"><span>Read
+                                                    More</span> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- ===============//blog section end here \\================= -->
 
 
@@ -299,11 +912,11 @@
 
 
 
-
     <!-- All Scripts -->
 
   {% include "includes/jss.html" %}
 </body>
 
-<!-- Mirrored from aminurislam.com/labartisan/anftiz-demo/anftiz/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Jul 2024 11:53:28 GMT -->
+
+<!-- Mirrored from aminurislam.com/labartisan/anftiz-demo/anftiz/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Jul 2024 11:53:28 GMT -->
 </html>
